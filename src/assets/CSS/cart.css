@@ -1,0 +1,8 @@
+.cartContainer{
+    grid-template-columns: 60% 40%;
+    justify-items: center;
+    align-items: center;
+
+    
+}
+

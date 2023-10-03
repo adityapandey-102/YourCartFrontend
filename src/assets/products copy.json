@@ -1,0 +1,404 @@
+[
+  {
+    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "price": 2999,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category": "mens_clothing",
+    "image": "https://www.fjallraven.com/4959f6/globalassets/catalogs/fjallraven/f2/f242/f24210/f560/7392158958184_ss18_a_foldsack_no1_21.jpg?width=2000&height=2000&mode=BoxPad&bgcolor=fff&quality=100",
+    "rating": {
+      "rate": 3.9,
+      "count": 120
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "Mens Casual Premium Slim Fit T-Shirts",
+    "price": 1349,
+    "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+    "category": "mens_clothing",
+    "image": "https://www.jiomart.com/images/product/original/rvsfgx5lzj/fly69-men-s-cotton-rfd-casual-shirts-premium-collections-light-grey-colour-l-size-slim-fit-shirt-cotton-rfd-shirt-product-images-rvsfgx5lzj-0-202305131525.jpg?im=Resize=(1000,1000)",
+    "rating": {
+      "rate": 4.1,
+      "count": 259
+    },
+    "discount_percentage": 20
+  },
+  {
+    "title": "Mens Cotton Jacket",
+    "price": 1679,
+    "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm-hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+    "category": "mens_clothing",
+    "image": "https://images.meesho.com/images/products/93037985/tzzl0_512.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 500
+    },
+    "discount_percentage": 15
+  },
+  {
+    "title": "Mens Casual Slim Fit",
+    "price": 1184,
+    "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+    "category": "mens_clothing",
+    "image": "https://tiimg.tistatic.com/fp/1/007/741/breathable-and-skin-friendly-men-s-jacket-casual-slim-fit-blazer-suit-coat--631.jpg",
+    "rating": {
+      "rate": 2.1,
+      "count": 430
+    },
+    "discount_percentage": 25
+  },
+  {
+    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0",
+    "price": 4799,
+    "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+    "category": "electronics",
+    "image": "https://5.imimg.com/data5/PY/OE/ZA/SELLER-15047531/2tb-wd-elements-portable-external.jpg",
+    "rating": {
+      "rate": 3.3,
+      "count": 203
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+    "price": 2899,
+    "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+    "category": "electronics",
+    "image": "https://m.media-amazon.com/images/I/71tpwWHXlOL.jpg",
+    "rating": {
+      "rate": 2.9,
+      "count": 470
+    },
+    "discount_percentage": 5
+  },
+  {
+    "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+    "price": 1899,
+    "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+    "rating": {
+      "rate": 4.8,
+      "count": 319
+    },
+    "discount_percentage": 15
+  },
+  {
+    "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+    "price": 6017,
+    "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+    "rating": {
+      "rate": 4.8,
+      "count": 400
+    },
+    "discount_percentage": 20
+  },
+  {
+    "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+    "price": 33499,
+    "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
+    "category": "electronics",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/51Ghof2JV2L.jpg",
+    "rating": {
+      "rate": 2.9,
+      "count": 250
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED",
+    "price": 48999,
+    "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+    "category": "electronics",
+    "image": "https://www.laptopsdirect.co.uk/Images/LC49RG90SSUXEN_2_Supersize.png?v=3",
+    "rating": {
+      "rate": 2.2,
+      "count": 140
+    },
+    "discount_percentage": 5
+  },
+  {
+    "title": "Adidas Men's Soccer Tiro Training Pants",
+    "price": 559,
+    "description": "Slim-fit soccer pants with tapered legs and zippered cuffs, Climacool keeps you cool and dry in warm weather, Ankle zips for convenience, Front zip pockets provide storage",
+    "category": "mens_clothing",
+    "image": "https://www.stripe3.com/cdn/shop/products/Tiro_21_Track_Pants_Black_GJ9867_21_model_1024x1024.jpg?v=1646873417",
+    "rating": {
+      "rate": 4.5,
+      "count": 450
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "Levi's Men's 505 Regular Fit Jeans",
+    "price": 1499,
+    "description": "Sits at waist, Extra room through thigh and leg, Straight leg opening, Zip fly with button closure",
+    "category": "mens_clothing",
+    "image": "https://images-cdn.ubuy.co.in/636923bb05f00c109254ecd3-levis-mens-505-regular-fit-jeans.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 600
+    },
+    "discount_percentage": 5
+  },
+  {
+    "title": "Nike Men's Dri-FIT Short Sleeve Training Top",
+    "price": 399,
+    "description": "Dri-FIT technology helps keep you dry and comfortable, Standard fit provides a relaxed, comfortable feel, Lightweight fabric provides breathability, Short-sleeved silhouette lets you move comfortably, Added side vent, Performance and style combine in this updated version of a Nike athletic top",
+    "category": "mens_clothing",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQEr3uvddcstvWVoNV6mC2KOoXA6t_XaPi43AfQsVww9w5H86kEGvTCTnoVUW8rIzBKLU&usqp=CAU",
+    "rating": {
+      "rate": 4.2,
+      "count": 320
+    },
+    "discount_percentage": 15
+  },
+  {
+    "title": "Carhartt Men's Quilted Flannel Lined Duck Active Jacket",
+    "price": 1499,
+    "description": "Shell: 100% Cotton; Lining: 100% Polyester, Zipper closure, Machine Wash, Hooded jacket with zip-up front featuring flannel-lined body and quilted nylon-lined sleeves, Drawstring-adjustable hood, Split kangaroo pocket at front, Rib-knit cuffs and waistband, Patch logo on left sleeve",
+    "category": "mens_clothing",
+    "image": "https://images-cdn.ubuy.co.in/63a7183f659b777be07272d6-carhartt-mens-quilted-flannel-lined-duck.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 670
+    },
+    "discount_percentage": 5
+  },
+  {
+    "title": "Men's Stylish Leather Boots",
+    "price": 1899,
+    "description": "Stylish leather boots for men. Perfect for fashion-forward individuals.",
+    "category": "Shoes_for_Men",
+    "image": "https://i.pinimg.com/1200x/48/14/79/481479d73c38f4df215849545a785d2d.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 18
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "Men's Running Shoes",
+    "price": 1799,
+    "description": "High-performance running Shoes_for_Men. Designed for speed and comfort.",
+    "category": "Shoes_for_Men",
+    "image": "https://rigilclothing.in/wp-content/uploads/2023/01/IMG_20210708_095008_311.jpg",
+    "rating": {
+      "rate": 4.8,
+      "count": 22
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "Men's Slip-On Sneakers",
+    "price": 1799,
+    "description": "Convenient slip-on sneakers for men. Easy to wear and perfect for everyday use.",
+    "category": "Shoes_for_Men",
+    "image": "https://www.travelandleisure.com/thmb/dm01XhurN3sBoBfM4Oqmxx-fuF0=/fit-in/1500x2509/filters:no_upscale():max_bytes(150000):strip_icc()/tal-slip-on-shoes-test-hey-dude-mens-wally-jared-annear-01-630d4f46342840268abf2200e8227d75.jpg",
+    "rating": {
+      "rate": 4.3,
+      "count": 14
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "Men's Classic Suede Loafers",
+    "price": 1899,
+    "description": "Classic suede loafers for men. A timeless addition to your footwear collection.",
+    "category": "Shoes_for_Men",
+    "image": "https://m.media-amazon.com/images/I/61p8z7CJcdL._AC_UY1000_.jpg",
+    "rating": {
+      "rate": 4.2,
+      "count": 10
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "Sony Xperia 1 III",
+    "price": 19899,
+    "description": "Sony's flagship smartphone with a 4K OLED display, Snapdragon 888 processor, and pro-grade camera system.",
+    "category": "smartphones",
+    "image": "https://fscl01.fonpit.de/userfiles/7687254/image/Sony_Xperia_1_III/NextPit_Sony_Xperia_1_III_back.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 420
+    },
+    "discount_percentage": 5
+  },
+  {
+    "title": "LG G8 ThinQ",
+    "price": 10399,
+    "description": "LG's ThinQ smartphone with a 6.1-inch OLED display, Snapdragon 855 processor, and Crystal Sound OLED speaker.",
+    "category": "smartphones",
+    "image": "https://s3b.cashify.in/gpro/uploads/2019/07/22154422/lg-g8-thinq-front-and-back.jpg",
+    "rating": {
+      "rate": 4.2,
+      "count": 280
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "Asus ROG Phone 5",
+    "price": 38099,
+    "description": "Gaming-centric smartphone from Asus with a 6.78-inch AMOLED display, Snapdragon 888 processor, and AirTrigger buttons.",
+    "category": "smartphones",
+    "image": "https://cdn.dxomark.com/wp-content/uploads/medias/post-86183/Asus-ROG-Phone-5-featured-image-packshot-review-Recovered.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 390
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "Motorola Moto G Power (2021)",
+    "price": 11799,
+    "description": "Budget-friendly smartphone with a 6.6-inch HD+ display, Snapdragon 662 processor, and a massive battery for long-lasting usage.",
+    "category": "smartphones",
+    "image": "https://www.gizmochina.com/wp-content/uploads/2021/01/1-11-500x500.jpg",
+    "rating": {
+      "rate": 4.3,
+      "count": 560
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "Nokia 8.3 5G",
+    "price": 17649,
+    "description": "Nokia's 5G smartphone with a 6.81-inch IPS display, Snapdragon 765G processor, and PureView quad-camera setup.",
+    "category": "smartphones",
+    "image": "https://www.gizmochina.com/wp-content/uploads/2020/03/Nokia-8.3-5G-500x500.jpeg",
+    "rating": {
+      "rate": 4.5,
+      "count": 320
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "price": 1169,
+    "description": "A classic novel exploring themes of wealth, love, and the American Dream in the 1920s.",
+    "category": "books",
+    "image": "https://www.eastonpress.com/on/demandware.static/-/Sites-full-catalog/default/dw564af04f/images/hi-res/Great-Gatsby_3795_d_slp.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 220
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "price": 1079,
+    "description": "A powerful novel addressing racial injustice and moral growth in the American South.",
+    "category": "books",
+    "image": "https://www.dramaticpublishing.com/media/catalog/product/cache/1/image/300x436/9df78eab33525d08d6e5fb8d27136e95/t/o/to_kill_a_mockingbird_cover-t34.jpg",
+    "rating": {
+      "rate": 4.9,
+      "count": 410
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "price": 989,
+    "description": "A dystopian novel depicting a totalitarian society and the struggle for freedom.",
+    "category": "books",
+    "image": "https://www.orwellfoundation.com/wp-content/uploads/2010/09/9780141042701.jpg",
+    "rating": {
+      "rate": 4.8,
+      "count": 390
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "price": 1079,
+    "description": "A coming-of-age novel following the experiences of a young man in New York City.",
+    "category": "books",
+    "image": "https://sothebys-md.brightspotcdn.com/dims4/default/1e04ae5/2147483647/strip/true/crop/2000x2000+0+0/resize/2048x2048!/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fmedia-desk%2Fea%2F4c%2F8bf4e9334ee0b9a64e96df9a5e32%2Fl22404-c9kvw-1.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 320
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "Men's Leather Oxford Shoes",
+    "price": 1199,
+    "description": "Classic leather oxford Shoes_for_Men. Perfect for formal occasions.",
+    "category": "Shoes_for_Men",
+    "image": "https://5.imimg.com/data5/ANDROID/Default/2021/6/EC/JP/DC/126000284/product-jpeg-500x500.jpg",
+    "rating": {
+      "rate": 4.4,
+      "count": 15
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "Men's Athletic Sneakers",
+    "price": 899,
+    "description": "High-performance athletic sneakers for men. Designed for sports and comfort.",
+    "category": "Shoes_for_Men",
+    "image": "https://5.imimg.com/data5/ECOM/Default/2021/12/JO/PK/NH/49405442/h0849ceedec80425e9a445c3eeff086ect-copy-500x500.jpg",
+    "rating": {
+      "rate": 4.9,
+      "count": 28
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "price": 1369,
+    "description": "A classic novel exploring themes of love, class, and society in the 19th century.",
+    "category": "books",
+    "image": "https://cloudfront.penguin.co.in/wp-content/uploads/2022/01/9780143454229.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 220
+    },
+    "discount_percentage": 10
+  },
+  {
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "price": 1249,
+    "description": "A fantasy epic following the journey to destroy a powerful ring.",
+    "category": "books",
+    "image": "https://cdn.kobo.com/book-images/7a557cb3-f72a-47c3-992b-951c9566e4d4/1200/1200/False/the-fellowship-of-the-ring-the-lord-of-the-rings-book-1-1.jpg",
+    "rating": {
+      "rate": 4.9,
+      "count": 390
+    },
+    "discount_percentage": 15
+  },
+  {
+    "title": "Google Pixel 6 Pro",
+    "price": 56999,
+    "description": "Google's flagship smartphone with a 6.7-inch OLED display, Snapdragon 8 Gen 2 processor, and advanced camera system.",
+    "category": "smartphones",
+    "image": "https://m.media-amazon.com/images/I/71FpXTBHDnL.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 320
+    },
+    "discount_percentage": 5
+  },
+  {
+    "title": "OnePlus 9T",
+    "price": 23499,
+    "description": "High-performance smartphone from OnePlus with a 6.55-inch AMOLED display, Snapdragon 870 processor, and fast charging.",
+    "category": "smartphones",
+    "image": "https://m.media-amazon.com/images/I/61H5BvUlNeS.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 270
+    },
+    "discount_percentage": 10
+  }
+]
