@@ -6,6 +6,8 @@ import { getProducts } from './store/slices/feature/ProductSlice';
 import { addFilterProducts } from './store/slices/feature/FilterSlice';
 function HomePage() {
     const dispatch =useDispatch()
+    const main = useSelector(state => state.product.productData)
+
 
     useEffect(() => {
         dispatch(getProducts())
@@ -18,7 +20,7 @@ function HomePage() {
             // Handle any errors here
             console.error('Error fetching products:', error);
           });
-      },[]);
+      },[main]);
   return (
     <>
     <div className='bg-gradient-to-br from-violet-700 to-pink-800 py-10 px-20 w-full flex items-center justify-center text-white'>
@@ -31,7 +33,7 @@ function HomePage() {
             </div>
         </div>
         <div>
-            <img src="src\assets\homepage.png" className='w-[35vh] h-[25vh] md:w-[50vh] md:h-[50vh] my-3' alt="" />
+            <img src="/homepage.png" className='w-[35vh] h-[25vh] md:w-[50vh] md:h-[50vh] my-3' alt="" />
         </div>
     </div>
     <h1 className='text-center font-bold text-3xl mt-10'>Category List</h1>

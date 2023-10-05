@@ -39,8 +39,10 @@ export default ProductSlice.reducer;
 
 
 export const getProducts= createAsyncThunk('products/get',async()=> {
-        // const result = await fetch('https://api.escuelajs.co/api/v1/products')
-        // const productData = await result.json();
+    console.log("hiittes")
+        // const result = await fetch(`${process.env.BASE_URL}productItem/fetchAllProducts`)
+        const result = await fetch('http://localhost:5000/api/productItem/fetchAllProducts')
+        const productData = await result.json();
         
-        return products;
+        return productData;
     })

@@ -8,6 +8,8 @@ import { addFilterProducts } from './store/slices/feature/FilterSlice';
 function Product() {
     const dispatch = useDispatch()
     const products = useSelector(state => state.filter.filterProduct)
+    const main = useSelector(state => state.product.productData)
+
 
     useEffect(() => {
         if (products.length === 0) {
@@ -23,14 +25,14 @@ function Product() {
                 });
         }
 
-    }, []);
+    }, [main]);
 
 
 
     return (
         <>
             <div className="product-box flex flex-row flex-wrap md:overflow-y-scroll gap-x-4 justify-center md:h-[750px] gap-y-6 pt-7 mt-14" >
-                {
+                { products &&
                     products.map((product) => {
                         return <ProductItem key={product.id} product={product} />
                     })

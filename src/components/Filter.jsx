@@ -41,7 +41,7 @@ function Filter() {
     }
 
     return (
-        <div className='bg-violet-400 w-[100%] h-[100%] text-black px-7'>
+        <div className='bg-white w-[100%] h-[100%] text-black px-7'>
             <div className="flex justify-between items-center p-4">
                 <p className="font-bold text-3xl">Filters</p>
                 <p className=" cursor-pointer" onClick={ClearFilter}>Clear</p>

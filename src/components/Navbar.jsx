@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
 import { useDispatch, useSelector } from 'react-redux';
@@ -19,10 +19,15 @@ function Navbar(props) {
 
         }
     }
+
     const cartProducts = useSelector(state => state.cart.cartItems);
     const ProductCount = cartProducts.length;
     const wislistItems = useSelector(state => state.wishlist.wishListItems)
     const products = useSelector(state => state.filter.filterProduct)
+    useEffect(()=>{
+    },[products])
+
+    
 
     const [query, setQuery] = useState("");
     const [searchActive, setSearchActive] = useState("");
@@ -30,13 +35,13 @@ function Navbar(props) {
         "display": "none"
     });
 
-    const handleSearch = (data) => {
+    const handleSearch = () => {
         // console.log("hitted")
-
-        return data.filter((item) =>
+        if(products.length!==0){
+        return products.filter((item) =>
             item.category.toLowerCase().includes(query) ||
             item.title.toLowerCase().includes(query)
-        )
+        )}
     }
     const handleNavigateSearch = (product) => {
         setStyle({
@@ -46,7 +51,7 @@ function Navbar(props) {
         setQuery("")
         navigate("/productdetails")
     }
-    const list = handleSearch(products)
+    const list = handleSearch()
 
 
     return (
@@ -65,7 +70,7 @@ function Navbar(props) {
                         }} name='search' />
                         <button className="p-3" type="submit"><img width="25" height="25" src="https://img.icons8.com/pastel-glyph/64/search--v2.png" alt="search--v2" /></button>
                     </form>
-                    {list.length!==0 && query !== "" && <div className='bg-white mt-2 rounded-md absolute z-30 w-[450px] max-h-[300px] overflow-y-scroll p-2' style={searchStyle}>
+                    {list && list.length!==0 && query !== "" && <div className='bg-white mt-2 rounded-md absolute z-30 w-[450px] max-h-[300px] overflow-y-scroll p-2' style={searchStyle}>
                         <ul onMouseLeave={()=>{
                     setStyle({
                         "display":"none"
@@ -102,7 +107,7 @@ function Navbar(props) {
                         <input className="ms-2 w-[90%]" type="search" placeholder="Search" onChange={(e) => setQuery(e.target.value)} />
                         <button className="p-3" type="submit"><img width="25" height="25" src="https://img.icons8.com/pastel-glyph/64/search--v2.png" alt="search--v2" /></button>
                     </form>
-                    {list.length!==0 && query !== "" && <div className='bg-white mt-2 rounded-md absolute z-30 w-[450px] max-h-[300px] overflow-y-scroll p-2' style={searchStyle}>
+                    {list && list.length!==0 && query !== "" && <div className='bg-white mt-2 rounded-md absolute z-30 w-[450px] max-h-[300px] overflow-y-scroll p-2' style={searchStyle}>
                         <ul onMouseLeave={()=>{
                     setStyle({
                         "display":"none"
