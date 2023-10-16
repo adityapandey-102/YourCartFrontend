@@ -70,7 +70,7 @@ function Filter() {
             <h2 className='text-2xl font-bold'>Price Range:</h2>
                 <div className="centered-row flex flex-row text-2xl justify-between"><p className="f-6">1000</p><p className="f-6">2500</p><p className="f-6">50000</p></div>
                 <div className="component-border ">
-                    <input type="range" min="1000" max="50000" onChange={handlePriceRange} aria-label="input-range-slider" step="100" className="custom-range w-full" id="volume" name="volume" />
+                    <input type="range" min="1000" max="50000" onChange={handlePriceRange} value={priceRange} aria-label="input-range-slider" step="100" className="custom-range w-full" id="volume" name="volume" />
                         <p className="f-5 f-bold center-text">Show Products below : Rs <span className="t-c-3">{priceRange}</span></p>
                 </div>
             </div>

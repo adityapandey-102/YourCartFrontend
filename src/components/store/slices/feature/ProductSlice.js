@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import products from '../../../../assets/products.json'
+const host=import.meta.env.VITE_BASE_URL 
+
 const initialState = {
     productData: [],
     inventoryDetail: [],
@@ -39,10 +41,8 @@ export default ProductSlice.reducer;
 
 
 export const getProducts= createAsyncThunk('products/get',async()=> {
-    console.log("hiittes")
-        // const result = await fetch(`${process.env.BASE_URL}productItem/fetchAllProducts`)
-        const result = await fetch('http://localhost:5000/api/productItem/fetchAllProducts')
+        const result = await fetch(`${host}/productItem/fetchAllProducts`)
         const productData = await result.json();
-        
+    
         return productData;
     })

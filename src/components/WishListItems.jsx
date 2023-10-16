@@ -1,18 +1,37 @@
 import React from 'react'
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { add } from './store/slices/feature/CartSlice';
+import { useDispatch ,useSelector} from 'react-redux';
+import { addCartItem } from './store/slices/feature/CartSlice';
 import { addwish, removeItem } from './store/slices/feature/wishListSlice';
+import { CircularProgress } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
+
+
 
 
 function WishListItems(props) {
+    const cartCount = useSelector(state => state.cart.ItemsCount)
+    const navigate = useNavigate();
     const dispatch= useDispatch();
+    const [spinner, setSpinner] = useState(false);
+
     const {product}=props
-    const handleAddCart=()=>{
-        dispatch(add(product));
+    const handleAddCart = async () => {
+        if (!cartCount[product._id]) {
+            dispatch(addCartItem(product));
+            setSpinner(true)
+            const myTimeout = setTimeout(() => {
+                setSpinner(false)
+            }, 3000);
+
+        }
+        else {
+            navigate("/cart")
+        }
     }
 
     const handleReadMore=()=>{
+        
         console.log("checkDetails");
     }
     const handleRemove=()=>{
@@ -32,7 +51,12 @@ function WishListItems(props) {
                     <p>{product.description.slice(0, 55)}.....</p>
                     <p className='text-xl'>{product.rating.rate} <span className='text-[#ef4444] text-2xl'>&#9733;</span> Rating</p>
                     <div className='flex justify-center mt-4'>
-                        <button onClick={handleAddCart} type='button' className='py-3 w-[90%] inline-block box-shadow bg-violet-600 rounded text-white hover:bg-violet-800 '>Add To Cart</button>
+                        <button onClick={handleAddCart} type='button' className='py-3 w-[90%] inline-block box-shadow bg-violet-600 rounded text-white hover:bg-violet-800 '>{
+                                    spinner ?
+                                        <CircularProgress sx={{ "color": "white" }} />
+                                        :
+                                        (cartCount[product._id] ? <>Go To Cart</> : <>Add To Cart</>)
+                                }</button>
                     </div>
                 </div>
 

@@ -2,29 +2,37 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { add } from './store/slices/feature/CartSlice';
-import { addwish} from './store/slices/feature/wishListSlice';
+import { addCartItem, getCartItems} from './store/slices/feature/CartSlice';
+import { addwish, getWishlist} from './store/slices/feature/wishListSlice';
 import { CircularProgress } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 function ProductDeatail(props) {
     const product = useSelector(state => state.product.productsDetail)
     const ifLike = useSelector(state => state.wishlist.ItemsCount)
     const cartCount = useSelector(state => state.cart.ItemsCount)
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     useEffect(()=>{
-        if(product.id===""){
+        if (!localStorage.getItem('token')) {
+            navigate('/login')
+          }
+        else if(product._id===""){
             navigate("/dashboard")
+        }
+        else{
+            dispatch(getWishlist());
+            dispatch(getCartItems());
         }
     },[])
 
-    const dispatch = useDispatch();
     const [spinner, setSpinner] = useState(false);
     const [spinner2, setSpinner2] = useState(false);
     const handleAddCart = async () => {
-        if (!cartCount[product.id]) {
-            dispatch(add(product));
+        if (!cartCount[product._id]) {
+            dispatch(addCartItem(product));
             setSpinner(true)
             const myTimeout = setTimeout(() => {
                 setSpinner(false)
@@ -38,7 +46,7 @@ function ProductDeatail(props) {
 
     const handleLike = () => {
 
-        if (!ifLike[product.id]) {
+        if (!ifLike[product._id]) {
             dispatch(addwish(product))
             setSpinner2(true)
             const myTimeout = setTimeout(() => {
@@ -56,6 +64,9 @@ function ProductDeatail(props) {
 
     return (
         <>
+        <Helmet>
+            <title>Product Detail Page</title>
+        </Helmet>
             <div className='h-[100%] w-full flex flex-col items-center md:justify-center gap-y-4 '>
                 <Link to={"/dashboard"} className='text-violet-800 text-2xl hover:text-violet-600 font-bold underline'>{" Go Back to Product Page"}</Link>
                 <div className='card md:w-[75%] flex flex-col md:flex-row  border-2 border-slate-200 shadow-xl rounded'>
@@ -76,7 +87,7 @@ function ProductDeatail(props) {
                                     spinner ?
                                         <CircularProgress sx={{ "color": "white" }} />
                                         :
-                                        (cartCount[product.id] ? <>Go To Cart</> : <>Add To Cart</>)
+                                        (cartCount[product._id] ? <>Go To Cart</> : <>Add To Cart</>)
                                 }
                             </button>
                             <button onClick={handleLike} type='button' className='py-3 w-[50%]  inline-block box-shadow bg-white rounded text-black hover:text-white hover:bg-pink-500 border-2 border-solid border-pink-700'>
@@ -84,7 +95,7 @@ function ProductDeatail(props) {
                                     spinner2 ?
                                         <CircularProgress sx={{ "color": "white" }} />
                                         :
-                                        (ifLike[product.id] ? <>Go To WishList</> : <>Move To WishList</>)
+                                        (ifLike[product._id] ? <>Go To WishList</> : <>Move To WishList</>)
                                 }
                             </button>
                         </div>

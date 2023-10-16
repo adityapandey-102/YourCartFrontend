@@ -51,9 +51,16 @@ const FilterSlice = createSlice({
         },
         setPriceRange: (state, action) => {
             state.priceRange = action.payload
-            state.filterProduct = state.CategoryFilterContainer.filter((item) => {
-                return action.payload >= item.price;
-            })
+            if (state.CategoryFilterContainer.length!==0) {
+                state.filterProduct = state.CategoryFilterContainer.filter((item) => {
+                    return action.payload >= item.price;
+                })  
+            }
+            else{
+                state.filterProduct = state.InitialContainer.filter((item) => {
+                    return action.payload >= item.price;
+                })
+            }
         },
         sethandleRating: (state, action) => {
             state.rating = action.payload
@@ -76,7 +83,6 @@ const FilterSlice = createSlice({
                     state.filterProduct = state.filterProduct.sort((a, b) => b.rating.rate - a.rating.rate);
                 },
                 "": () => {
-                    console.log("hitted")
                     return
                 }
             }
@@ -94,7 +100,7 @@ const FilterSlice = createSlice({
                 mens_clothing: false,
                 books: false,
             }
-            state.priceRangepriceRange = 50000
+            state.priceRange = 50000
             state.rating = 1,
             state.sortingTechnique = ""
 

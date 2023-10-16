@@ -23,7 +23,7 @@ function Navbar(props) {
     const cartProducts = useSelector(state => state.cart.cartItems);
     const ProductCount = cartProducts.length;
     const wislistItems = useSelector(state => state.wishlist.wishListItems)
-    const products = useSelector(state => state.filter.filterProduct)
+    const products = useSelector(state => state.product.productData)
     useEffect(()=>{
     },[products])
 
@@ -52,7 +52,10 @@ function Navbar(props) {
         navigate("/productdetails")
     }
     const list = handleSearch()
-
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        navigate('/login')
+      }
 
     return (
         <>
@@ -76,13 +79,13 @@ function Navbar(props) {
                         "display":"none"
                     })}}>
                             { list.map((item) => {
-                                return <li className='border-b-2 border-black border-solid hover:bg-blue-300 py-2' onClick={() => handleNavigateSearch(item)} key={item.id}><p>{item.title.slice(0, 40)}...</p></li>
+                                return <li className='border-b-2 border-black border-solid hover:bg-blue-300 py-2' onClick={() => handleNavigateSearch(item)} key={item._id}><p>{item.title.slice(0, 40)}...</p></li>
                             })}
                         </ul>
                     </div>}
                 </div>
                 <div className='right-side w-auto' >
-                    <Link to={"/signup"} type='button' className="px-2 md:px-6 h-8 mx-3 hover:bg-slate-50 bg-white text-violet-950 text-[15px] md:text-base">
+                    <Link to={"/signup"} type='button' onClick={handleLogout} className="px-2 md:px-6 h-8 mx-3 hover:bg-slate-50 bg-white text-violet-950 text-[15px] md:text-base">
                         LogOut
                     </Link>
                     <Link to={"/wishlist"} className="cart relative mx-3">
@@ -113,7 +116,7 @@ function Navbar(props) {
                         "display":"none"
                     })}}>
                             { list.map((item) => {
-                                return <li className='border-b-2 border-black border-solid hover:bg-blue-300 py-2' onClick={() => handleNavigateSearch(item)} key={item.id}><p>{item.title.slice(0, 40)}...</p></li>
+                                return <li className='border-b-2 border-black border-solid hover:bg-blue-300 py-2' onClick={() => handleNavigateSearch(item)} key={item._id}><p>{item.title.slice(0, 40)}...</p></li>
                             })}
                         </ul>
                     </div>}

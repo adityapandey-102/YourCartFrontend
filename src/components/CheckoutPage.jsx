@@ -1,24 +1,47 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import '../assets/CSS/cart.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { getWishlist } from './store/slices/feature/wishListSlice';
+import { getCartItems } from './store/slices/feature/CartSlice';
+import { Helmet } from 'react-helmet';
+import useToast from './custom hook/useToast';
 
 function CheckoutPage() {
   const products = useSelector((state) => state.cart.cartItems);
   const productCount = useSelector((state) => state.cart.ItemsCount);
+  const navigate=useNavigate();
   const dispatch = useDispatch();
+  const showToast=useToast()
+  const host=import.meta.env.VITE_BASE_URL   
+  // const host="http://localhost:5000/api"
+
+
+  useEffect(()=>{
+    if (!localStorage.getItem('token')) {
+      navigate('/login')
+    }
+    else{
+      if (products.length===0) {
+        navigate("/cart")
+      }
+      dispatch(getWishlist());
+      dispatch(getCartItems());
+    }
+  },[])
   const [shippingAddress, setShippingAddress] = useState({
     fullName: '',
     address: '',
     city: '',
     postalCode: '',
-    country: '',
+    email: '',
+    contactNo:'',
   });
 
   const item_price = () => {
     let count = 0;
     products.forEach((item) => {
-      count += item.price * productCount[item.id];
+      count += item.price * productCount[item._id];
     });
     return count;
   };
@@ -29,7 +52,7 @@ function CheckoutPage() {
     let count_discount = 0;
     products.forEach((item) => {
       count_discount +=
-        (item.price * (item.discount_percentage / 100)) * productCount[item.id];
+        (item.price * (item.discount_percentage / 100)) * productCount[item._id];
     });
     return Math.round(count_discount);
   };
@@ -44,45 +67,112 @@ function CheckoutPage() {
     });
   };
 
-  const handlePlaceOrder = () => {
+  const openRazorpayInterface=(data)=>{
+    const options={
+    key: import.meta.env.VITE_KEY, 
+    amount: Number(data.amount), 
+    currency: data.currency,
+    name: "Your Cart",
+    description: "Test Transaction",
+    order_id: data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    handler:async function (response){
+        const result = await fetch(`${host}/checkoutPayment/verify`,{
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem('token')
+          },
+          body: JSON.stringify(response)
+        })
+        const verifyStatus= await result.json()
+        if(verifyStatus.signatureIsValid==="true"){
+          showToast("Payment Done successfully! Your order will ship XYZ days","success")
+          navigate("/orderSummary")
+        }
+        else{
+          showToast("Payment Unsuccessfull! Please Try Again","error")
+        }
+    },
+    prefill: {
+        name: shippingAddress.fullName,
+        email: shippingAddress.email,
+        contact: shippingAddress.contactNo
+    },
+    notes: {
+        "address": shippingAddress.fullName+","+shippingAddress.address+","+shippingAddress.city+","+shippingAddress.postalCode,
+    },
+    theme: {
+        color: "#940B92"
+    }
+    }
+    const rzp = new window.Razorpay(options);
+    rzp.open()
+  }
+
+  const handlePlaceOrder = async() => {
     // Here, you can implement your order placement logic, which may involve sending the order details to a server.
     // For this example, we'll simply log the shipping address and order details.
-    console.log('Shipping Address:', shippingAddress);
-    console.log('Order Details:', products);
-    console.log('Total Price:', price - discount + 40);
+    // console.log('Shipping Address:', shippingAddress);
+    // console.log('Order Details:', products);
+    // console.log('Total Price:', price - discount + 40);
+    const amountTotal=price - discount + 40
+    if (shippingAddress.address.length >3 &&
+      shippingAddress.postalCode.length >3 &&
+      shippingAddress.contactNo.length >3 &&
+      shippingAddress.fullName.length >3 &&
+      shippingAddress.city.length >3 &&
+      shippingAddress.email.length >3
+      ) {
+      const result = await fetch(`${host}/checkoutPayment/orders`,{
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem('token')
+          },
+          body: JSON.stringify({amountTotal})
+        })
+        const orderData= await result.json()
+        openRazorpayInterface(orderData.data); 
+    }
+    else{
+      showToast("Please make sure shipping address is filled completly","error")
+    }
   };
 
   return (
     <>
+    <Helmet>
+      <title>Checkout Page</title>
+    </Helmet>
       <div className="cartContainer md:grid flex flex-col md:mt-[100px]">
-        <div className="flex flex-col w-[80%] gap-3 self-baseline">
+        <div className="flex flex-col w-[80%] gap-3 md:self-baseline">
           <h1 className="text-3xl font-bold">Items List ({products.length})</h1>
           {products.map((product) => {
             const discounted_price=Math.round(product.price-(product.price*(product.discount_percentage/100)))
-            return <div key={product.id}  className='border-2 border-dashed border-violet-800 p-3 h-fit'>
+            return <div key={product._id}  className='border-2 border-dashed border-violet-800 p-3 h-fit'>
                 <p className='font-bold  md:text-xl'>{product.title}</p> 
-                <p className='font-semibold'>({productCount[product.id]} &times; {discounted_price} )</p>
+                <p className='font-semibold'>({productCount[product._id]} &times; {discounted_price} )</p>
             </div>;
           })}
         </div>
 
-        <main class="cart__sumary-content p-8 flex flex-col gap-y-3 w-[80%] box-shadow">
-          <header class="font-bold">Price Details</header>
+        <main className="cart__sumary-content p-8 flex flex-col gap-y-3 w-[80%] box-shadow">
+          <header className="font-bold">Price Details</header>
           <hr className="border-solid border-black" />
-          <div class="order-data flex justify-between">
+          <div className="order-data flex justify-between">
             <p>Price({products.length} items)</p>
             <p>Rs. {price}</p>
           </div>
-          <div class="order-data flex justify-between">
+          <div className="order-data flex justify-between">
             <p>Discount</p>
             <p>– Rs. {discount}</p>
           </div>
-          <div class="order-data flex justify-between">
+          <div className="order-data flex justify-between">
             <p>Delivery Charges</p>
             <p>Rs. 40</p>
           </div>
           <hr className="border-solid border-black" />
-          <div class="order-data flex justify-between font-bold text-2xl">
+          <div className="order-data flex justify-between font-bold text-2xl">
             <p>Total Amount</p>
             <p>Rs . {(price - discount) + 40}</p>
           </div>
@@ -101,6 +191,34 @@ function CheckoutPage() {
                   id="fullName"
                   name="fullName"
                   value={shippingAddress.fullName}
+                  onChange={handleAddressChange}
+                  required
+                  className="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                  Shipping Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={shippingAddress.email}
+                  onChange={handleAddressChange}
+                  required
+                  className="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="contactNo" className="block text-sm font-medium text-gray-700">
+                  Contact Number
+                </label>
+                <input
+                  type="text"
+                  id="contactNo"
+                  name="contactNo"
+                  value={shippingAddress.contactNo}
                   onChange={handleAddressChange}
                   required
                   className="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
@@ -143,20 +261,6 @@ function CheckoutPage() {
                   id="postalCode"
                   name="postalCode"
                   value={shippingAddress.postalCode}
-                  onChange={handleAddressChange}
-                  required
-                  className="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="country" className="block text-sm font-medium text-gray-700">
-                  Country
-                </label>
-                <input
-                  type="text"
-                  id="country"
-                  name="country"
-                  value={shippingAddress.country}
                   onChange={handleAddressChange}
                   required
                   className="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
