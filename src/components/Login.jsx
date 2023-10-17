@@ -87,6 +87,7 @@ function Login() {
                             type="email"
                             autoComplete="email"
                             required
+                            value={signInForm.email}
                             className="mt-1 p-2 w-full focus:outline-none placeholder-red-500"
                             placeholder="Email address"
                             onChange={handleOnChange}
@@ -102,6 +103,7 @@ function Login() {
                             type={showPassword ? 'text' : 'password'}
                             autoComplete="current-password"
                             required
+                            value={signInForm.password}
                             className="mt-1 p-2 w-full focus:outline-none placeholder-red-500"
                             placeholder="Password"
                             onChange={handleOnChange}
@@ -134,7 +136,11 @@ function Login() {
                     <div className="mt-4">
                         <button
                             type="submit"
-                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md  bg-white  hover:bg-red-500 text-black hover:text-white border-1 border-red-500 border-solid focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            onClick={()=>{
+                                setSignIn({ email: 'guestUser@gmail.com', password: '123456' })
+                                handleSubmit()
+                            }}
+                            className="group relative w-full flex justify-center py-2 px-4 border text-sm font-medium rounded-md  bg-white border-2 border-red-500 border-solid  hover:bg-red-500 text-black hover:text-white" 
                         >
                             Guest User Login
                         </button>

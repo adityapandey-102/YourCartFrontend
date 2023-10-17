@@ -36,7 +36,7 @@ function Navbar(props) {
     });
 
     const handleSearch = () => {
-        // console.log("hitted")
+        console.log("search hitted")
         if(products.length!==0){
         return products.filter((item) =>
             item.category.toLowerCase().includes(query) ||
@@ -107,14 +107,22 @@ function Navbar(props) {
             <div className='Seach-Box-mob static md:hidden w-[100vw] sticky z-10 top-0 bg-violet-700 p-3 flex flex-row'>
                 <div className='w-[90%]'>
                     <form className="flex rounded-md bg-white h-8 items-center " role="search">
-                        <input className="ms-2 w-[90%]" type="search" placeholder="Search" onChange={(e) => setQuery(e.target.value)} />
+                        <input className="ms-2 w-[90%]" type="search" placeholder="Search" onChange={(e) => {
+                            setQuery(e.target.value)
+                            setStyle({
+                                "display":"none"
+                            })
+                        }
+                            } />
                         <button className="p-3" type="submit"><img width="25" height="25" src="https://img.icons8.com/pastel-glyph/64/search--v2.png" alt="search--v2" /></button>
                     </form>
-                    {list && list.length!==0 && query !== "" && <div className='bg-white mt-2 rounded-md absolute z-30 w-[450px] max-h-[300px] overflow-y-scroll p-2' style={searchStyle}>
-                        <ul onMouseLeave={()=>{
-                    setStyle({
-                        "display":"none"
-                    })}}>
+                    {list && list.length!==0 && query !== "" && <div className='bg-white mt-2 rounded-md absolute z-30 w-[90%] max-h-[300px] overflow-y-scroll p-2' >
+                        <ul
+                        onTouchMove={()=>{
+                            setStyle({
+                                "display":"none"
+                            })}}    
+                    >
                             { list.map((item) => {
                                 return <li className='border-b-2 border-black border-solid hover:bg-blue-300 py-2' onClick={() => handleNavigateSearch(item)} key={item._id}><p>{item.title.slice(0, 40)}...</p></li>
                             })}

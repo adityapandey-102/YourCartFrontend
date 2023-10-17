@@ -21,7 +21,7 @@ function Categories() {
 
 
   return (
-    <div className='flex flex-wrap gap-x-6 justify-between px-11 py-14'>
+    <div className='flex flex-wrap gap-x-6 justify-between items-center px-11 py-14'>
       <Link to={"/category/books"} className=''   >
         <div onClick={()=>handleCategory('books')} className='p-2 box-shadow highlightBox'>
         <img src="/books.jpg" alt="" className='w-[250px] h-[250px]  border-2 border-solid border-slate-200' />

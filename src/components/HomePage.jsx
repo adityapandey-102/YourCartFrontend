@@ -49,7 +49,7 @@ function HomePage() {
           <h1 className='text-2xl md:text-5xl font-semibold'>Here we provide best exclusive product.</h1>
           <p className='mt-5 text-sm md:text-lg'>Buy an Amazing and Awesome product. We provide you here a best services and quality.  </p>
           <div className="flex gap-x-3">
-            <Link to={"/dashboard"} type='button' className='px-2 py-2 md:px-9 md:py-4 bg-violet-600 hover:bg-white hover:text-violet-800 hover:border-2 hover:border-solid hover:border-violet-700 rounded-md mt-7 font-bold text-white text-sm md:text-lg'>Go To HomePage</Link>
+            <Link to={"/dashboard"} type='button' className='px-2 py-2 md:px-9 md:py-4 bg-violet-600 hover:bg-white hover:text-violet-800 hover:border-2 hover:border-solid hover:border-violet-700 rounded-md mt-7 font-bold text-white text-sm md:text-lg'>Checkout All Products</Link>
             <Link to={"/signup"} type='button' className='px-2 py-2 md:px-9  md:py-4 bg-white hover:bg-violet-600 bg-white text-violet-800 border-2 border-solid border-violet-700 rounded-md mt-7 font-bold hover:text-white text-sm md:text-lg'>Create An Account</Link>
           </div>
         </div>
